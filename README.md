@@ -31,8 +31,8 @@ This .sql file includes a list of 6 command lines of SQL queries to retrieve cer
 ### 2-3-1. Overview
 This png file contains a Entity Relationship Diagram of the 4 entities, showing the primary keys and foreign keys of each entity.
 
-## 2-4. Pseudocodes
-This file contains pseudocodes which show how I broke down the task and planned how to organise the database and relationships.
+## 2-4. pseudocodes.md
+This file contains pseudocodes which show how I broke down the task and planned how to organise the database identify relationships, and write SQL queries
 
 
 # 3. How to use the files
