@@ -71,13 +71,30 @@
 * execute the command; mysqldump -u hds -p assessment1 > assessment1_database.sql, in local directory, after exitting MySQL
 
 # Part2. Write SQL queries to extract specific data 
-## 1. print a list of all doctors based at a particular hospital
+## 1. Print a list of all doctors based at a particular hospital
 * connect hospitals & doctors - LEFT JOIN;
 ![Venn diagram1](pseudo.part2.1.png)
 * mind duplicated columns; (some columns such as name are the same in the two tables while the values are different), and rename them using AS to avoid confusion
-* look up hospitals by its primary key, which is a unique identifier, rather than only its name; SELECT hospitals.hospitalsid, hospitals.name
+* specify hospitals by its primary key, which is a unique identifier, rather than only its name; SELECT hospitals.hospital_id, hospitals.name
 
- ## 2. print a list of all prescriptions for a particular patient, ordered by the prescription date
-* connext patients & prescriptions- LEFT JOIN;
-![Venn diagram2]()  
-*  
+## 2. Print a list of all prescriptions for a particular patient, ordered by the prescription date
+* connect patients & prescriptions- use LEFT JOIN;
+![Venn diagram2](pseudo.part2.2.png)  
+
+## 3. Print a list of all prescriptions that a particular doctor has prescribed
+* connect doctors & prescriptions - use LEFT JOIN;
+![Venn diagram3](pseudo.part2.3.png)
+
+## 4. Add a new patient to the database, including being registered with one of the doctors
+* use INSERT INTO VALUES
+  
+## 5. Identify which doctor has made the most prescriptions
+* connect prescriptions & doctors - INNER JOIN;
+![Venn diagram5](pseudo.part2.5.png)
+* use GROUP BY and COUNT to compare the numbers of prescriptions
+* specify doctors by its primary key, which is a unique identifier, rather than only its name; SELECT doctors.person_id, doctors.name
+
+## 6. Print a list of all doctors at the hospital with biggest size (number of beds)
+* connect hospitals & doctors - use LEFT JOIN;
+![Venn diagram6](pseudo.part2.6.png)
+* use SELECT MAX FROM to get the maximum value of hospitals.size
